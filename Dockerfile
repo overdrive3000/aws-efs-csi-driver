@@ -62,5 +62,6 @@ RUN mv /etc/amazon/efs /etc/amazon/efs-static-files
 
 COPY --from=builder /go/src/github.com/kubernetes-sigs/aws-efs-csi-driver/bin/aws-efs-csi-driver /bin/aws-efs-csi-driver
 COPY THIRD-PARTY /
-
+RUN mkdir /etc/amazon/efs-legacy
+COPY efs-utils.conf /etc/amazon/efs-legacy
 ENTRYPOINT ["/bin/aws-efs-csi-driver"]
