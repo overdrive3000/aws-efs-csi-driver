@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
 	name: efs-utils-cm
 	labels:
-		app.kubernetes.io/name: {{ include "aws-efs-csi-driver.name " . }}
+    app.kubernetes.io/name: {{ include "aws-efs-csi-driver.name" . }}
 data:
 	efs-utils.conf: |
 		# Super custom efs-utils.conf file
