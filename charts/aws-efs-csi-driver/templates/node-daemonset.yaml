@@ -82,6 +82,8 @@ spec:
             - name: efs-utils-config
               mountPath: /var/amazon/efs
             - name: efs-utils-config-legacy
+              mountPath: /etc/amazon/efs-legacy
+            - name: efs-utils-config-custom
               mountPath: /etc/amazon/efs-legacy/efs-utils.conf
               subPath: efs-utils.conf
           ports:
@@ -158,5 +160,9 @@ spec:
             path: /var/amazon/efs
             type: DirectoryOrCreate
         - name: efs-utils-config-legacy
+          hostPath:
+            path: /var/amazon/efs
+            type: DirectoryOrCreate
+        - name: efs-utils-config-custom
           configMap:
             name: efs-utils-cm
