@@ -157,6 +157,5 @@ spec:
             path: /var/amazon/efs
             type: DirectoryOrCreate
         - name: efs-utils-config-legacy
-          hostPath:
-            path: /etc/amazon/efs
-            type: DirectoryOrCreate
+          configMap:
+            name: efs-utils-cm
