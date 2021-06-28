@@ -82,7 +82,8 @@ spec:
             - name: efs-utils-config
               mountPath: /var/amazon/efs
             - name: efs-utils-config-legacy
-              mountPath: /etc/amazon/efs-legacy
+              mountPath: /etc/amazon/efs-legacy/efs-utils.conf
+              subPath: efs-utils.conf
           ports:
             - name: healthz
               containerPort: 9809
