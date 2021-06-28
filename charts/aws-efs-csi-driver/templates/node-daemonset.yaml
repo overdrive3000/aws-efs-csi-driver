@@ -67,7 +67,6 @@ spec:
           args:
             - --endpoint=$(CSI_ENDPOINT)
             - --logtostderr
-            - --efs-utils-config-dir-path=/etc/efs
             - --efs-utils-config-legacy-dir-path=/etc/amazon/efs-legacy-custom
             - --v={{ .Values.node.logLevel }}
           env:
@@ -83,11 +82,12 @@ spec:
               mountPath: /var/run/efs
             - name: efs-utils-config
               mountPath: /var/amazon/efs
-            - name: efs-utils-config-legacy
-              mountPath: /etc/amazon/efs-legacy-custom
+              #- name: efs-utils-config-legacy
+              #  mountPath: /etc/amazon/efs-legacy-custom
             - name: efs-utils-config-custom
               mountPath: /etc/amazon/efs-legacy-custom/efs-utils.conf
               subPath: efs-utils.conf
+              readOnly: false
           ports:
             - name: healthz
               containerPort: 9809
