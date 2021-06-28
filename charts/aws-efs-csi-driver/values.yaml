@@ -8,8 +8,8 @@ fullnameOverride: ""
 replicaCount: 2
 
 image:
-  repository: amazon/aws-efs-csi-driver
-  tag: "v1.3.1"
+  repository: overdrive3000/aws-efs-csi-driver
+  tag: "v1.3.1-dirty"
   pullPolicy: IfNotPresent
 
 sidecars:
