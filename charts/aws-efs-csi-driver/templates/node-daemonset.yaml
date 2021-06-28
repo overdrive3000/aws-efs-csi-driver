@@ -67,6 +67,7 @@ spec:
           args:
             - --endpoint=$(CSI_ENDPOINT)
             - --logtostderr
+            - --efs-utils-config-dir-path=/etc/efs
             - --efs-utils-config-legacy-dir-path=/etc/amazon/efs-legacy-custom
             - --v={{ .Values.node.logLevel }}
           env:
